@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Geist+Mono:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .box-shadow {
+    -webkit-box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.86);
+    -moz-box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.86);
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.86);
+  }
+  .box-shadow-gate {
+    -webkit-box-shadow: 4px 2px 0px 0px rgba(0, 0, 0, 0.86);
+    -moz-box-shadow: 4px 2px 0px 0px rgba(0, 0, 0, 0.86);
+    box-shadow: 4px 2px 0px 0px rgba(0, 0, 0, 0.86);
+  }
+  .input-coll {
+    @apply bg-form-color border-t-0 border-l-0 border-r-0 border-b-[1px] border-black outline-none h-12;
+  }
+  .button-pay {
+    @apply text-center border-[1px] border-black h-11 leading-[2.75rem] rounded-md box-shadow;
+  }
+  .button-gate {
+    @apply border-[1px] border-black rounded-md box-shadow-gate h-20 p-3 flex justify-center items-center flex-col;
+  }
+}
