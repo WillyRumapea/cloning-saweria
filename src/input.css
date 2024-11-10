@@ -23,4 +23,7 @@
   .button-gate {
     @apply border-[1px] border-black rounded-md box-shadow-gate h-20 p-3 flex justify-center items-center flex-col;
   }
+  .required-input {
+    @apply after:content-['*'] after:text-red-500;
+  }
 }

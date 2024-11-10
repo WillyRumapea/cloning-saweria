@@ -13,6 +13,9 @@
       crossorigin="anonymous"
     ></script>
     <!-- fontawasome icon -->
+    <!-- add style -->
+    <link rel="stylesheet" href="src/style/additionalStyle.css" />
+    <!-- add style -->
   </head>
   <body>
     <section>
@@ -35,8 +38,12 @@
           <div class="font-mmono pl-3">
             <h1 class="text-3xl font-comforta font-semibold mb-4">WILLEA</h1>
             <div class="mb-4">
-              <i class="fa-brands fa-instagram text-2xl pr-4"></i>
-              <i class="fa-brands fa-youtube text-2xl"></i>
+              <a href="">
+                <i class="fa-brands fa-instagram text-2xl pr-4"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-youtube text-2xl"></i>
+              </a>
             </div>
             <p class="text-[15px]">
               terimakasih supportnya adick adick (TIDAK MENERIMA DONASI JUDI
@@ -49,15 +56,22 @@
             action=""
             class="border border-black rounded-md bg-form-color font-mmono font-normal box-shadow p-3 flex justify-center align-middle gap-2 flex-col"
           >
-            <label for="" class="-mb-1">Nominal:</label>
+            <label for="" class="-mb-1 required-input">Nominal:</label>
             <div class="">
               <div>
                 <label for="">Rp</label>
                 <input
                   type="number"
                   placeholder="ketik jumlah dukungan"
-                  class="w-[95%] input-coll"
+                  min="10000"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                  class="w-[95%] input-coll focus:border-sky-600 focus:border-b-2 invalid:text-red-500 peer"
                 />
+                <p
+                  class="text-red-500 text-sm my-2 opacity-0 h-0 absolute left-0 top-[60%] peer-invalid:h-auto peer-invalid:opacity-100 peer-invalid:relative"
+                >
+                  Nominal minimum Rp1.000
+                </p>
               </div>
               <div class="text-sm text-slate-400 font-light mt-2 mb-3">
                 Minimum alert: <span class="text-red-500">Rp10.000</span> TTS:
@@ -71,23 +85,35 @@
               </div>
             </div>
             <div class="mt-5">
-              <label for="">Dari:</label>
+              <label for="" class="required-input">Dari:</label>
               <input
                 type="text"
                 placeholder="Willea"
-                class="input-coll w-full"
+                class="input-coll w-full focus:border-sky-600 focus:border-b-2 peer"
+                id="input-from"
+                required
               />
+              <p
+                class="text-red-500 text-sm my-2 opacity-0 absolute left-0 top-[60%] peer-focus:relative peer-focus:opacity-100"
+              >
+                Nama tidak boleh kosong
+              </p>
             </div>
             <div>
-              <label for="">Email:</label>
+              <label for="" class="required-input">Email:</label>
               <input
-                type="text"
+                type="email"
                 placeholder="willea@gmail.com"
-                class="input-coll w-full"
+                class="input-coll w-full focus:border-sky-600 focus:border-b-2 invalid:text-red-500 peer"
               />
+              <p
+                class="text-red-500 text-sm my-2 opacity-0 h-0 absolute left-0 top-[60%] peer-invalid:h-auto peer-invalid:opacity-100 peer-invalid:relative"
+              >
+                Masukkan email kamu
+              </p>
             </div>
             <div>
-              <label for="">Pesan:</label>
+              <label for="" class="required-input">Pesan:</label>
               <input
                 type="text"
                 placeholder="Hello World!"
@@ -97,9 +123,9 @@
             <div>
               <label class="mb-4 block">Media</label>
               <div class="grid grid-cols-3 gap-3">
-                <a class="button-pay bg-red-600 text-white">YouTube</a>
-                <a class="button-pay bg-black text-white">Tiktok</a>
-                <a class="button-pay bg-yell-pay">Voice Note</a>
+                <a href="" class="button-pay bg-red-600 text-white">YouTube</a>
+                <a href="" class="button-pay bg-black text-white">Tiktok</a>
+                <a href="" class="button-pay bg-yell-pay">Voice Note</a>
               </div>
             </div>
             <div class="grid gap-3">
@@ -151,17 +177,59 @@
                 </p>
                 <h1 class="text-2xl font-normal mb-3">Total: Rp</h1>
               </div>
-              <div class="text-right pt-[1.2rem]">
+              <div class="text-right border">
                 <button
-                  class="text-center w-60 h-20 border-[1px] border-black rounded-md bg-yell-pay box-shadow"
+                  class="text-center w-52 h-[6.5rem] border-[1px] border-black rounded-md bg-yell-pay box-shadow"
                 >
                   Kirim Dukungan
                 </button>
               </div>
             </div>
           </form>
+          <div class="font-mmono mt-6 p-3 grid grid-cols-2">
+            <div class="text-left flex flex-col justify-center gap-8">
+              <p class="text-lg">Made with 💙 from SUB</p>
+              <p class="text-lg">PT HARTA TAHTA SUKARIA</p>
+            </div>
+            <div class="text-right">
+              <div>
+                <ul class="flex flex-col">
+                  <li>
+                    <a href="" class="underline text-lg"
+                      >Syarat dan ketentuan</a
+                    >
+                  </li>
+                  <li><a href="" class="underline text-lg">FAQ</a></li>
+                  <li><a href="" class="underline text-lg">Changelog</a></li>
+                </ul>
+              </div>
+              <div>
+                <ul class="flex justify-end gap-5 mt-3">
+                  <li>
+                    <a href=""
+                      ><i class="fa-regular fa-envelope text-2xl"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href=""
+                      ><i class="fa-brands fa-instagram text-2xl"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-twitter text-2xl"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-discord"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <!-- script js -->
+    <script src="src/js/script.js"></script>
+    <!-- script js -->
   </body>
 </html>
