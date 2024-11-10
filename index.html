@@ -66,6 +66,7 @@
                   min="10000"
                   oninput="this.value = this.value.replace(/[^0-9]/g, '');"
                   class="w-[95%] input-coll focus:border-sky-600 focus:border-b-2 invalid:text-red-500 peer"
+                  id="input-price"
                 />
                 <p
                   class="text-red-500 text-sm my-2 opacity-0 h-0 absolute left-0 top-[60%] peer-invalid:h-auto peer-invalid:opacity-100 peer-invalid:relative"
@@ -78,10 +79,30 @@
                 <span class="text-red-500">Rp1.000.000</span>
               </div>
               <div class="grid grid-cols-4 gap-3">
-                <a href="" class="button-pay bg-cyan-300">10k</a>
-                <a href="" class="button-pay bg-blue-pay">50k</a>
-                <a href="" class="button-pay bg-yell-pay">100k</a>
-                <a href="" class="button-pay bg-purp-pay">300k</a>
+                <a
+                  href="#"
+                  class="button-pay price-button bg-cyan-300"
+                  data-amount="10000"
+                  >10k</a
+                >
+                <a
+                  href="#"
+                  class="button-pay price-button bg-blue-pay"
+                  data-amount="50000"
+                  >50k</a
+                >
+                <a
+                  href="#"
+                  class="button-pay price-button bg-yell-pay"
+                  data-amount="100000"
+                  >100k</a
+                >
+                <a
+                  href="#"
+                  class="button-pay price-button bg-purp-pay"
+                  data-amount="300000"
+                  >300k</a
+                >
               </div>
             </div>
             <div class="mt-5">
@@ -117,8 +138,14 @@
               <input
                 type="text"
                 placeholder="Hello World!"
-                class="input-coll w-full"
+                class="input-coll w-full focus:border-sky-600 focus:border-b-2 invalid:text-red-500 peer"
+                required
               />
+              <p
+                class="text-red-500 text-sm my-2 opacity-0 absolute left-0 top-[60%] peer-focus:relative peer-focus:opacity-100"
+              >
+                Pesan tidak boleh kosong
+              </p>
             </div>
             <div>
               <label class="mb-4 block">Media</label>

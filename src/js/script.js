@@ -1,10 +1,11 @@
-// const inputFrom = document.getElementById("input-from");
-// const warnFrom = document.getElementById("warn-from");
+const priceButtons = document.querySelectorAll(".price-button");
+const inputPrice = document.getElementById("input-price");
 
-// inputFrom.addEventListener("input", () => {
-//   if (inputFrom.value === "") {
-//     warnFrom.classList.add("hide-warn");
-//   } else {
-//     warnFrom.classList.remove("hide-warn");
-//   }
-// });
+priceButtons.forEach((priceButton) => {
+  priceButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    priceButton.classList.add("priceButtonClick");
+    const amount = priceButton.getAttribute("data-amount");
+    inputPrice.value = amount;
+  });
+});
