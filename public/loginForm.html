@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <!-- style taiwlind -->
+    <link rel="stylesheet" href="../src/style/style.css" />
+    <!-- style taiwlind -->
+    <!-- fontawasome icon -->
+    <script
+      src="https://kit.fontawesome.com/9335a886a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- fontawasome icon -->
+    <!-- add style -->
+    <link rel="stylesheet" href="../src/style/additionalStyle.css" />
+    <!-- add style -->
+  </head>
+  <body class="grid place-items-center h-screen">
+    <form
+      action=""
+      class="container mx-auto my-auto border-[1.1px] border-black max-w-lg py-8 px-8 rounded-md box-shadow"
+    >
+      <h1 class="font-comforta text-3xl font-bold">Login</h1>
+      <ul class="font-mmono flex flex-col gap-6 mt-10">
+        <li class="flex flex-col gap-2">
+          <label for="">Email:</label>
+          <input
+            type="email"
+            placeholder="willea@gmail.com"
+            class="border-b-[1.1px] border-black invalid:border-red-500 outline-none py-3"
+          />
+        </li>
+        <li class="flex flex-col gap-2">
+          <label for="">Password:</label>
+          <input
+            type="password"
+            class="border-b-[1.1px] border-black outline-none"
+          />
+        </li>
+        <li class="flex h-12">
+          <div class="forPas w-[35%] p-2">
+            <a href="#" class="text-sm">Lupa Password</a>
+          </div>
+          <div class="cont-button w-[65%] text-right">
+            <button
+              type="submit"
+              class="bg-cyan-200 translate-y-3 -my-5 h-11 w-52 border-[1.1px] border-black rounded-md box-shadow"
+            >
+              Masuk
+            </button>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

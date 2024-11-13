@@ -18,7 +18,7 @@
     @apply bg-form-color border-t-0 border-l-0 border-r-0 border-b-[1px] border-black outline-none h-12;
   }
   .button-pay {
-    @apply text-center border-[1px] border-black h-11 leading-[2.75rem] rounded-md box-shadow;
+    @apply text-center border-[1px] border-black h-11 leading-[2.75rem] rounded-md box-shadow transition-all;
   }
   .button-gate {
     @apply border-[1px] border-black rounded-md box-shadow-gate h-20 p-3 flex justify-center items-center flex-col;
