@@ -29,15 +29,27 @@
           <input
             type="email"
             placeholder="willea@gmail.com"
-            class="border-b-[1.1px] border-black invalid:border-red-500 outline-none py-3"
+            class="border-[1.1px] border-x-0 border-t-0 py-2 border-black focus:outline-none focus:border-sky-600 invalid:text-red-600 peer"
           />
+          <p
+            class="text-red-500 text-sm opacity-0 absolute peer-invalid:relative peer-invalid:opacity-100"
+          >
+            Email tidak boleh kosong
+          </p>
         </li>
         <li class="flex flex-col gap-2">
           <label for="">Password:</label>
-          <input
-            type="password"
-            class="border-b-[1.1px] border-black outline-none"
-          />
+          <div class="flex">
+            <input
+              type="password"
+              class="border-b-[1.1px] border-black outline-none w-[95%]"
+              id="input-pass"
+            />
+            <i
+              class="fa-regular fa-eye-slash cursor-pointer"
+              id="hidden-pass"
+            ></i>
+          </div>
         </li>
         <li class="flex h-12">
           <div class="forPas w-[35%] p-2">
@@ -54,5 +66,8 @@
         </li>
       </ul>
     </form>
+    <!-- script js -->
+    <script src="../src/js/loginScript.js"></script>
+    <!-- script js -->
   </body>
 </html>
