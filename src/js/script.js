@@ -5,6 +5,8 @@ const loginButton = document.getElementById("login-button");
 const amountSupport = document.querySelector("#amount-support");
 const inputTerms = document.querySelectorAll(".term-condition");
 const payButtons = document.querySelectorAll(".payment-button");
+const sendButton = document.querySelector("#send-button");
+const adminCost = document.getElementById("admin-cost");
 
 priceButtons.forEach((priceButton) => {
   priceButton.addEventListener("click", (e) => {
@@ -36,8 +38,14 @@ inputTerms.forEach((inputTerm) => {
     payButtons.forEach((payButton) => {
       if (e.target.checked) {
         payButton.classList.remove("contrast-50");
+        payButton.classList.remove("cursor-no-drop");
+        sendButton.classList.remove("contrast-50");
+        sendButton.classList.remove("cursor-no-drop");
       } else {
         payButton.classList.add("contrast-50");
+        payButton.classList.add("cursor-no-drop");
+        sendButton.classList.add("contrast-50");
+        sendButton.classList.add("cursor-no-drop");
       }
     });
   });
