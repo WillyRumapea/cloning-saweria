@@ -4,6 +4,20 @@
   box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.91);
 }
 
+.buttonGateClick {
+  border: 1px solid;
+  height: 5rem;
+  padding: 12px;
+  display: flex;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-box-shadow: 4px 2px 0px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 4px 2px 0px 0px rgba(0, 0, 0, 0.86);
+  box-shadow: 4px 2px 0px 0px rgba(0, 0, 0, 0.86);
+}
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
