@@ -6,7 +6,6 @@ const amountSupport = document.querySelector("#amount-support");
 const inputTerms = document.querySelectorAll(".term-condition");
 const payButtons = document.querySelectorAll(".payment-button");
 const sendButton = document.querySelector("#send-button");
-const adminCost = document.getElementById("admin-cost");
 
 priceButtons.forEach((priceButton) => {
   priceButton.addEventListener("click", (e) => {
@@ -15,9 +14,7 @@ priceButtons.forEach((priceButton) => {
     priceButton.classList.add("priceButtonClick");
     const amount = Number(priceButton.getAttribute("data-amount"));
     inputPrice.value = amount;
-    amountSupport.textContent =
-      "Jumlah dukungan: " +
-      amount.toLocaleString("id-ID", { style: "currency", currency: "IDR" });
+    amountSupport.textContent = "Jumlah dukungan: Rp" + amount;
   });
 });
 
@@ -51,6 +48,39 @@ inputTerms.forEach((inputTerm) => {
   });
 });
 
+const biayaAdmin = {
+  qris: 0.7,
+  gopay: 2,
+  ovo: 2.74,
+  dana: 1.69,
+  "link-aja": 1.69,
+};
+
+function calcAdminPayGate() {
+  const adminCost = document.getElementById("admin-cost");
+  const valueCost = parseFloat(amountSupport.textContent.replace(/[^\d]/g, ""));
+  const totalCost = document.getElementById("total-cost");
+
+  const activeButton = document.querySelector(".buttonGateClick");
+
+  if (activeButton) {
+    const tax = parseFloat(activeButton.dataset.pajak);
+    const taxForTotal = tax * 1000;
+
+    if (!isNaN(valueCost) && !isNaN(tax)) {
+      const totalAdminCost = Math.round(valueCost * (tax / 10));
+      const totalCostValue = taxForTotal + valueCost;
+
+      adminCost.textContent =
+        "Biaya Layanan (Payment Gateway): Rp" + totalAdminCost;
+      // console.log("biaya admin : " + totalAdminCost);
+      totalCost.textContent = "Total: Rp " + totalCostValue;
+    } else {
+      console.log("tidak ada gateway dipilih");
+    }
+  }
+}
+
 payButtons.forEach((payButton) => {
   payButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -59,9 +89,10 @@ payButtons.forEach((payButton) => {
       btn.classList.remove("buttonGateClick");
       btn.classList.add("button-gate");
     });
-
     payButton.classList.add("button-gate");
     payButton.classList.add("buttonGateClick");
+
+    calcAdminPayGate();
   });
 });
 
