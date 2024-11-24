@@ -6,6 +6,9 @@ const amountSupport = document.querySelector("#amount-support");
 const inputTerms = document.querySelectorAll(".term-condition");
 const payButtons = document.querySelectorAll(".payment-button");
 const sendButton = document.querySelector("#send-button");
+const popUpCont = document.querySelector("#popUpContainer");
+const popUpContent = document.querySelector(".popup-content");
+const buttonClose = document.querySelector("#close-button");
 
 priceButtons.forEach((priceButton) => {
   priceButton.addEventListener("click", (e) => {
@@ -27,7 +30,18 @@ mediaButtons.forEach((mediaButton) => {
 });
 
 loginButton.addEventListener("click", () => {
-  document.location.href = "loginForm.html";
+  fetch("loginForm.html")
+    .then((res) => res.text())
+    .then((data) => {
+      popUpContent.innerHTML = data;
+      popUpCont.classList.remove("hidden");
+    })
+    .catch((err) => console.log(err));
+});
+
+buttonClose.addEventListener("click", () => {
+  popUpCont.classList.add("hidden");
+  popUpCont.classList.remove("z-[1]");
 });
 
 inputTerms.forEach((inputTerm) => {

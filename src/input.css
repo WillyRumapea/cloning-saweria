@@ -29,4 +29,10 @@
   .required-input {
     @apply after:content-['*'] after:text-red-500;
   }
+  .login-cont {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 }

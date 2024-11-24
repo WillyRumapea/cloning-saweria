@@ -23,10 +23,18 @@
         <div class="text-right px-3">
           <a
             href="#"
-            class="border-[1px] border-black rounded-md w-28 h-11 text-center leading-[2.7rem] text-lg font-mmono text-slate-800 bg-cyan-300 box-shadow inline-block"
+            class="border-[1px] border-black rounded-md w-28 h-11 text-center leading-[2.7rem] text-lg font-mmono text-slate-800 bg-cyan-300 box-shadow inline-block relative login-cont"
             id="login-button"
             >Login</a
           >
+        </div>
+        <div
+          id="popUpContainer"
+          class="hidden fixed top-0 left-0 translate-x-[50%] translate-y-28 z-[1] w-1/2"
+        >
+          <div class="popup-content">
+            <button>x</button>
+          </div>
         </div>
         <div class="mt-5 grid grid-cols-[25%_75%]">
           <div class="pl-6">
